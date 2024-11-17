@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-neqfb2@%@_t!+ob%hnh5s3^#ukb8+)q7*jg9k28%^0l!3-faf2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -70,6 +70,13 @@ TEMPLATES = [
     },
 ]
 
+# if DEBUG:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': 'db.sqlite3'
+#         }
+#     }
 WSGI_APPLICATION = 'PsevdoService.wsgi.application'
 
 
