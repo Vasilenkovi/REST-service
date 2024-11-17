@@ -157,33 +157,23 @@ LOGGING = {
         "file-debug": {
             "level": "DEBUG",
             "class": "logging.FileHandler",
-            "filename": BASE_DIR / "debug.log",
+            "filename": BASE_DIR / "/logs/debug.log",
         },
         "file-warns": {
             "level": "WARNING",
             "class": "logging.FileHandler",
-            "filename": BASE_DIR / "warnings.log",
+            "filename": BASE_DIR / "/logs/warnings.log",
         },
         "file-crit": {
             "level": "CRITICAL",
             "class": "logging.FileHandler",
-            "filename": BASE_DIR / "critical_errors.log",
+            "filename": BASE_DIR / "/logs/critical_errors.log",
         },
     },
     "loggers": {
-        "django-debug": {
-            "handlers": ["file-debug"],
+        "django": {
+            "handlers": ["file-debug", "file-warns", "file-crit"],
             "level": "DEBUG",
-            "propagate": True,
-        },
-        "django-warns": {
-            "handlers": ["file-warns"],
-            "level": "WARNING",
-            "propagate": True,
-        },
-        "django-crit": {
-            "handlers": ["file-crit"],
-            "level": "CRITICAL",
             "propagate": True,
         },
     },
