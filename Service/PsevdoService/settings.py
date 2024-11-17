@@ -144,8 +144,48 @@ REST_FRAMEWORK = {
 
 # Настройки для drf-spectacular
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Beer Estimation API',                               # Название API
-    'DESCRIPTION': 'API для управления реестром пива.',  # Описание API
-    'VERSION': '1.0.0',                                           # Версия API
-    'SERVE_INCLUDE_SCHEMA': False,                                # Отключение схемы в ответах API
+    'TITLE': 'Beer Estimation API',
+    'DESCRIPTION': 'API для управления реестром пива.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+BASE_DIR
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file-debug": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": BASE_DIR / "debug.log",
+        },
+        "file-warns": {
+            "level": "WARNING",
+            "class": "logging.FileHandler",
+            "filename": BASE_DIR / "warnings.log",
+        },
+        "file-crit": {
+            "level": "CRITICAL",
+            "class": "logging.FileHandler",
+            "filename": BASE_DIR / "critical_errors.log",
+        },
+    },
+    "loggers": {
+        "django-debug": {
+            "handlers": ["file-debug"],
+            "level": "DEBUG",
+            "propagate": True,
+        },
+        "django-warns": {
+            "handlers": ["file-warns"],
+            "level": "WARNING",
+            "propagate": True,
+        },
+        "django-crit": {
+            "handlers": ["file-crit"],
+            "level": "CRITICAL",
+            "propagate": True,
+        },
+    },
+
 }
