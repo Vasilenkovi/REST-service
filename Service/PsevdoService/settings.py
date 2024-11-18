@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-neqfb2@%@_t!+ob%hnh5s3^#ukb8+)q7*jg9k28%^0l!3-faf2
 DEBUG = False
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
-
+STATIC_ROOT = BASE_DIR / "static/"
 
 # Application definition
 
@@ -149,7 +149,7 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
-BASE_DIR
+print(BASE_DIR / "logs/critical_errors.log",)
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -157,17 +157,17 @@ LOGGING = {
         "file-debug": {
             "level": "DEBUG",
             "class": "logging.FileHandler",
-            "filename": BASE_DIR / "/logs/debug.log",
+            "filename": BASE_DIR / "logs/debug.log",
         },
         "file-warns": {
             "level": "WARNING",
             "class": "logging.FileHandler",
-            "filename": BASE_DIR / "/logs/warnings.log",
+            "filename": BASE_DIR / "logs/warnings.log",
         },
         "file-crit": {
             "level": "CRITICAL",
             "class": "logging.FileHandler",
-            "filename": BASE_DIR / "/logs/critical_errors.log",
+            "filename": BASE_DIR / "logs/critical_errors.log",
         },
     },
     "loggers": {
